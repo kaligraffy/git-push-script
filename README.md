@@ -3,4 +3,6 @@ Wrapper script around git commit and push that automatically pushes. Just drop i
 
 You can overwrite the commit message by passing in an argument at $1
 
+I.E ./git-push.sh "MESSAGE"
+
 This will save your password in plaintext, so don't use this on a public computer.
