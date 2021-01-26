@@ -8,13 +8,8 @@ if [[ ! -z $1 ]]; then
   GENERIC_COMMIT_MESSAGE="$1";
 fi
 
-if [[ ! -e $CREDENTIALS_FILE ]]; then
-  git config credential.helper 'store'
-  echo "Saving credentials in $CREDENTIALS_FILE" 
-  git commit -a -m "$GENERIC_COMMIT_MESSAGE";
-  git push;
-  cat $CREDENTIALS_FILE
-else
-  git commit -a -m "$GENERIC_COMMIT_MESSAGE";
-  git push;
-fi
+git config credential.helper 'store'
+
+git commit -a -m "$GENERIC_COMMIT_MESSAGE";
+git push;
+
